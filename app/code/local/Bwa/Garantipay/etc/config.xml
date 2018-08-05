@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Bwa_Garantipay>
+            <version>0.1.0</version>
+        </Bwa_Garantipay>
+    </modules>
+    <global>
+        <models>
+            <garantipay>
+                <class>Bwa_Garantipay_Model</class>
+            </garantipay>
+        </models>
+
+        <helpers>
+            <garantipay>
+                <class>Bwa_Garantipay_Helper</class>
+            </garantipay>
+        </helpers>
+
+        <blocks>
+            <garantipay>
+                <class>Bwa_Garantipay_Block</class>
+            </garantipay>
+        </blocks>
+
+    </global>
+    <default>
+        <payment>
+            <garantipay>
+                <model>garantipay/standard</model>
+                <active>1</active>
+                <order_status>pending</order_status>
+                <title>Garanti Pay</title>
+                <payment_action>sale</payment_action>
+                <allowspecific>0</allowspecific>
+                <sort_order>1</sort_order>
+            </garantipay>
+        </payment>
+    </default>
+    <frontend>
+        <routers>
+            <garantipay>
+                <use>standard</use>
+                <args>
+                    <module>Bwa_Garantipay</module>
+                    <frontName>garantipay</frontName>
+                </args>
+            </garantipay>
+        </routers>
+    </frontend>
+</config>

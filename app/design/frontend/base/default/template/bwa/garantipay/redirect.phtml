@@ -1,0 +1,33 @@
+<?php
+    // Retrieve order
+    $_order = new Mage_Sales_Model_Order();
+    $orderId = Mage::getSingleton('checkout/session')->getLastRealOrderId();
+    $_order->loadByIncrementId($orderId);
+
+?>
+
+<h1>Bankaya Yönlendiriliyorsunuz. Lütfen bekleyiniz.</h1>
+
+<div>
+    <div class="text-center"><img src="https://eticaret.garanti.com.tr/_img/2015/garantipay.png"></div>
+    <hr>
+    <p>GarantiPay ile kart bilgilerinizi paylaşmadan ödeme yapmak isterseniz, GarantiPay ödeme sayfasına yönlendirilirsiniz. Bu sayfada ilgili alana GSM veya TCKN girdiğinizde, GarantiPay servisini destekleyen T.Garanti Bankası mobil uygulamanıza* işlem bildirimi iletilir, uygulama üzerinden ödemenizi tamamlamak istediğiniz kartı seçerek işlemi kolayca tamamlayabilirsiniz.</p>
+
+    <p> Ödeme işlemi tamamlandıktan sonra otomatik olarak www.triohome.com.tr'ye tekrar yönlendirilirsiniz.</p>
+
+    <p>* GarantiPay Ödeme Servisi şu an için sadece BonusFlaş uygulaması ile kullanılabilmektedir. Uygulama ile ilgili detaylara www.bonusflas.com.tr üzerinden ulaşabilirsiniz.</p>
+</div>
+
+<form name="BWA_GarantiPAY_form" method="post" action="<?php echo $data->paymentUrl ?>">
+
+    <?php
+
+        foreach ($params as $name => $value) {
+            echo('<input type="hidden" name="' . $name . '" value="' . $value . '"/>
+            ');
+        }
+    ?>
+</form>
+<script type="text/javascript">
+    document.BWA_GarantiPAY_form.submit();
+</script>

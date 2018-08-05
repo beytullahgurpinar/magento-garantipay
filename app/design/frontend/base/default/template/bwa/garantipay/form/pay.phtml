@@ -1,0 +1,23 @@
+<?php
+    // The ID using the code on the UL is important - this is what Magento will use to hide and display the
+    // Form with javascript - it should be set to display:none by default
+?>
+<?php $_code = $this->getMethod()->getCode() ?>
+<ul class="form-list" id="payment_form_<?php echo $_code ?>" style="display:none;">
+    <li>
+
+
+        <div class="text-center"><img src="https://eticaret.garanti.com.tr/_img/2015/garantipay.png"></div>
+        <hr>
+        <p>GarantiPay ile kart bilgilerinizi paylaşmadan ödeme yapmak isterseniz, GarantiPay ödeme sayfasına yönlendirilirsiniz. Bu sayfada ilgili alana GSM veya TCKN girdiğinizde, GarantiPay servisini destekleyen T.Garanti Bankası mobil uygulamanıza* işlem bildirimi iletilir, uygulama üzerinden ödemenizi tamamlamak istediğiniz kartı seçerek işlemi kolayca tamamlayabilirsiniz.</p>
+
+        <p> Ödeme işlemi tamamlandıktan sonra otomatik olarak www.triohome.com.tr'ye tekrar yönlendirilirsiniz.</p>
+
+        <p>* GarantiPay Ödeme Servisi şu an için sadece BonusFlaş uygulaması ile kullanılabilmektedir. Uygulama ile ilgili detaylara www.bonusflas.com.tr üzerinden ulaşabilirsiniz.</p>
+    </li>
+    <li>
+        <div>
+            <?php echo $this->getMethod()->getConfigData('message'); ?>
+        </div>
+    </li>
+</ul>
