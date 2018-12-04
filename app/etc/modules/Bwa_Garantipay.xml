@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Bwa_Garantipay>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Bwa_Garantipay>
+    </modules>
+</config> 
